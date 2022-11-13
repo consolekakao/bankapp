@@ -1,13 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
 import React, {useEffect, useState, type PropsWithChildren} from 'react';
 import {
   Image,
@@ -23,6 +13,7 @@ import {
 import styled, {css} from 'styled-components';
 import {Header} from './components/Header';
 import {memberArr, transactionList} from './data';
+import {Transaction} from './components/Transaction';
 const StyledHeader = styled.View`
   width: 100%;
   height: 260px;
@@ -66,7 +57,6 @@ const App = () => {
           <StyledTotalMoney>
             {transactionList
               .reduce((prev: any, curr: any) => {
-                console.log('currrr:', curr.value);
                 return (prev += curr.value);
               }, 0)
               .toLocaleString('ko-KR')}
@@ -78,10 +68,10 @@ const App = () => {
               <StyleMemberButton isFirst={true}>
                 <Text
                   style={{
-                    fontSize: 28,
+                    fontSize: 20,
                     color: '#fff',
                   }}>
-                  All
+                  전체
                 </Text>
               </StyleMemberButton>
             </TouchableOpacity>
@@ -109,16 +99,20 @@ const App = () => {
               <StyleMemberButton>
                 <Text
                   style={{
-                    fontSize: 28,
+                    fontSize: 20,
                     color: '#fff',
                   }}>
-                  Use
+                  지출
                 </Text>
               </StyleMemberButton>
             </TouchableOpacity>
           </StyledMembers>
         </StyledHeader>
       </SafeAreaView>
+      <Transaction
+        selectedMember={selectedMember}
+        setSelectedMember={setSelectedMember}
+      />
     </>
   );
 };

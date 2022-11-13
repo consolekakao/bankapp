@@ -11,10 +11,13 @@
   },
   "dependencies": {
     "@react-native-firebase/app": "^16.4.3",
+    "@react-navigation/native": "^6.0.13",
+    "@react-navigation/native-stack": "^6.9.1",
     "@types/react-native-vector-icons": "^6.4.12",
     "@types/styled-components": "^5.1.26",
     "react": "18.0.0",
     "react-native": "0.70.5",
+    "react-native-gesture-handler": "^2.8.0",
     "react-native-vector-icons": "^9.2.0",
     "styled-components": "^5.3.6"
   },
