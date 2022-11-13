@@ -21,6 +21,7 @@ import {
   View,
 } from 'react-native';
 import styled, {css} from 'styled-components';
+import {Header} from './components/Header';
 import {memberArr, transactionList} from './data';
 const StyledHeader = styled.View`
   width: 100%;
@@ -60,6 +61,7 @@ const App = () => {
   return (
     <>
       <SafeAreaView style={{backgroundColor: 'hotpink'}}>
+        <Header />
         <StyledHeader>
           <StyledTotalMoney>
             {transactionList
